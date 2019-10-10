@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+
+    <h1> Show Infor One PerSon</h1>
+    <hr>
+
+    <table border="2" padding = "5">
+          <thead>
+            <tr>
+               <th>ID</th>
+               <th>Name</th>
+               <th>Age</th>
+               <th>Address</th>
+            </tr>
+         </thead>
+        {% for employee in Employees %}
+        <tr>
+            <td>{{ employee.id }}</td>
+            <td>{{ employee.name }}</td>
+            <td>{{ employee.age }}</td>
+            <td>{{ employee.address }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

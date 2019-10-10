@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+     *{
+            box-sizing: border-box;
+        }
+        .container{
+            background: #f2f2f2;
+            border-radius: 20px;
+            padding: 20px;
+            width:  600px;
+        }
+        input[type="text"]{
+            margin: 10px 0;
+            padding: 20px;
+            width: 100%;
+            border-radius: 5px;
+            display: inline-block;
+            border: 1px solid #ccc;
+        }
+        input[type="submit"]{
+            width: 100%;
+            color: white;
+            background: black;
+            border: none;
+            border-radius: 5px;
+            font-size: 20px;
+            padding: 10px;
+            margin: 7px 0;
+        }
+        input[type="submit"]:hover{
+            background: green;
+            color: white;
+        }
+        input[type="submit"]:active{
+            background: red;
+            color: yellow;
+        }
+        </style>
+</head>
+<body>
+    <h1>Press Id want to show info</h1>
+    <hr>
+    <div class="container">
+        <form action = "/showinfo" method = "post">
+            <label for = "id">ID</label><br>
+            <input type = "text" name = "id" placeholder = "ID" /><br>
+            <input type = "submit" value = "Show" />
+        </form>
+    </div>
+</body>
+</html>

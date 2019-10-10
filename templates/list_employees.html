@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang = "en">
+   <head>
+      <style>
+         *{
+         box-sizing: border-box;}
+         .topnav{
+            overflow: auto;
+            background: black;
+            width: auto;
+         }
+         .topnav a{
+            color: white;
+            float: left;
+            display: block;
+            text-decoration: none;
+            padding: 10px;
+         }
+         .topnav a:hover{
+            background: green;
+            color: white;
+         }
+         .topnav a:active{
+            background: red;
+            color: yellow;
+         }
+         table, th, td{
+            border: 2px solid black;
+            border-radius: 3px;
+            text-align: left;
+            font-size: 20px;
+         }
+         th, td{
+            width: 50px;
+            padding: 10px;
+         }
+         th{
+            font-weight: bold;
+            background: #ccc;
+         }
+      </style>
+      <title>Home</title>
+   </head>
+   <body>
+      <h1>
+         <a href = "{{ url_for('list_employees') }}">Employee Management System</a>
+      </h1>
+
+      <hr/>
+      <div class="topnav">
+         <a href="{{ url_for('addEmployee') }}">Add New Employee</a>
+         <a href="{{ url_for('del_employee') }}">Delete Employee</a>
+         <a href="{{ url_for('edit_employee') }}">Edit Employee</a>
+         <a href="{{ url_for('show_info') }}">Show info Employee</a>
+      </div>
+      <div>
+      {%- for message in get_flashed_messages() %}
+         {{ message }}
+      {%- endfor %}
+
+      <h3>Employees List</h3>
+      <table class="table">
+         <thead>
+            <tr>
+               <th>ID</th>
+               <th>Name</th>
+               <th>Age</th>
+               <th>Address</th>
+            </tr>
+         </thead>
+
+         <tbody>
+            {% for employee in Employees %}
+               <tr>
+                  <td>{{ employee.id }}</td>
+                  <td>{{ employee.name }}</td>
+                  <td>{{ employee.age }}</td>
+                  <td>{{ employee.address }}</td>
+               </tr>
+            {% endfor %}
+         </tbody>
+      </table>
+      </div>
+   </body>
+</html>
