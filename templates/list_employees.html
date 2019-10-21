@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="static/styles.css">
+    <title>Home</title>
+</head>
+<body>
+    <h1>
+        Employees List
+    </h1>
+    <hr>
+    {%- for category, message in get_flashed_messages(with_categories = true) %}
+        <div class="alert alert-danger">
+            {{message}}
+        </div>
+    {%- endfor %}
+    <div class="topnav" style="width:325px">
+        <a href="{{ url_for('add_employee') }}">Add</a>
+        <a href="{{ url_for('del_employee')}}">Delete</a>
+        <a href="{{ url_for('edit_employee')}}">Edit</a>
+        <a href="{{ url_for('id_search')}}">Show Info</a>
+    </div>
+    <div class="table" style="margin: 20px 0;">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Address</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for employee in Employees %}
+                <tr>
+                    <td>{{employee.id}}</td>
+                    <td>{{employee.name}}</td>
+                    <td>{{employee.age}}</td>
+                    <td>{{employee.address}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+    </div>
+</body>
+</html>
