@@ -18,7 +18,7 @@ class PersonForm(ModelForm):
         phone = self.cleaned_data.get('phone')
 
         if not first_name or not last_name or not birthday or not email or not gender or not phone:
-            raise forms.ValidationError('some thing missing')
+            raise forms.ValidationError('something missing')
 
         return self.cleaned_data
 

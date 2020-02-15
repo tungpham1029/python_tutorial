@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}thanks-page{% endblock %}
+{% block content %}
+
+<main id="htlfndr-main-content" class="htlfndr-main-content" role="main">
+    <article class="htlfndr-thanks-page text-center">
+        <h1>Thank You!</h1>
+        <h3>for choosing
+            <a href="index.html">
+                <span class="htlfndr-logo-text"> hotel <span>finder</span></span>
+            </a>
+        </h3>
+        <img src="images/mail_icon.jpg" alt="mail"/>
+        <div><h4>We have just sent to you E-mail a letter with complete information about your booking</h4></div>
+        <a class="htlfndr-more-link text-center" href="{% url 'home' %}">homepage</a>
+    </article><!-- .row .htlfndr-page-content -->
+</main><!-- .htlfndr-hotel-single-content -->
+
+
+{% endblock %}

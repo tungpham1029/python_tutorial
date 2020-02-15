@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% block title %}Detail{% endblock %}
 {% block content %}
 
 <!-- Start of main content -->
@@ -8,10 +8,10 @@
     <div class="htlfndr-steps">
 				<ul class="htlfndr-progress">
 					<li><a href="{% url 'home' %}">
-						<span class="htlfndr-step-number">1</span> <span class="htlfndr-step-description">hotels</span></a>
+                        <span class="htlfndr-step-number">1</span> <span class="htlfndr-step-description">hotels</span></a>
 					</li>
 					<li class="htlfndr-active-step">
-						<span class="htlfndr-step-number">2</span> <span class="htlfndr-step-description">detail</span></a>
+						<span class="htlfndr-step-number">2</span> <span class="htlfndr-step-description">detail</span>
 					</li>
 					<li>
 						<span class="htlfndr-step-number">3</span> <span class="htlfndr-step-description">booking</span>

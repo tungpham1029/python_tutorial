@@ -1,27 +1,25 @@
 {% extends 'base.html' %}
-{% block title %}
-Home
-{% endblock %}
+{% block title %}Home{% endblock %}
 {% block content %}
 <!-- Start of main content -->
 <div class="container">
     <!-- Progress steps -->
     <div class="htlfndr-steps">
-				<ul class="htlfndr-progress">
-					<li class="htlfndr-active-step"><a href="search-result.html">
-						<span class="htlfndr-step-number">1</span> <span class="htlfndr-step-description">hotels</span></a>
-					</li>
-					<li>
-						<span class="htlfndr-step-number">2</span> <span class="htlfndr-step-description">detail</span></a>
-					</li>
-					<li>
-						<span class="htlfndr-step-number">3</span> <span class="htlfndr-step-description">booking</span>
-					</li>
-					<li>
-						<span class="htlfndr-step-number">4</span> <span class="htlfndr-step-description">payment</span>
-					</li>
-				</ul>
-			</div><!-- .htlfndr-steps -->
+        <ul class="htlfndr-progress">
+            <li class="htlfndr-active-step"><a href="{% url 'home' %}">
+                <span class="htlfndr-step-number">1</span> <span class="htlfndr-step-description">hotels</span></a>
+            </li>
+            <li>
+                <span class="htlfndr-step-number">2</span> <span class="htlfndr-step-description">detail</span>
+            </li>
+            <li>
+                <span class="htlfndr-step-number">3</span> <span class="htlfndr-step-description">booking</span>
+            </li>
+            <li>
+                <span class="htlfndr-step-number">4</span> <span class="htlfndr-step-description">payment</span>
+            </li>
+        </ul>
+    </div><!-- .htlfndr-steps -->
 
     <aside class="htlfndr-sidebar htlfndr-sidebar-in-top htlfndr-full-form" role="search">
         <div class="widget htlfndr-form-dark">

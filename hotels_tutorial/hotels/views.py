@@ -25,5 +25,4 @@ def detail_hotel(request, slug):
     return render(request, 'detail_hotel.html', context)
 
 
-def payment(request):
-    return render(request, 'payment.html')
+

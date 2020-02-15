@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% block title %}Booking{% endblock %}
 {% block content %}
 <div class="htlfndr-wrapper">
 
@@ -13,7 +14,7 @@
                 <li><a href="{% url 'detail_hotel' hotels.slug %}">
                     <span class="htlfndr-step-number">2</span> <span class="htlfndr-step-description">detail</span></a>
                 </li>
-                <li>
+                <li class="htlfndr-active-step">
                     <span class="htlfndr-step-number">3</span> <span class="htlfndr-step-description">booking</span>
                 </li>
                 <li>

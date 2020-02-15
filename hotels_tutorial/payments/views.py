@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from hotels.models import Hotel, HotelImage
@@ -10,17 +11,14 @@ from .models import Person
 def payment(request, slug):
     if request.method == 'POST':
         form = PersonForm(request.POST)
-
         if form.is_valid():
             form.save()
-            print('done')
-            return redirect('home')
+            return redirect('thanks_page')
         else:
+            print(form.errors)
             hotels = Hotel.objects.get(slug=slug)
-            slugs = Hotel.objects.filter(slug=slug)
             images = HotelImage.objects.filter(hotel=hotels)
             context = {
-                'slugs': slugs,
                 'hotels': hotels,
                 'images': images,
                 'form': form,
@@ -29,13 +27,14 @@ def payment(request, slug):
     else:
         form = PersonForm(None)
         hotels = Hotel.objects.get(slug=slug)
-        slugs = Hotel.objects.filter(slug=slug)
         images = HotelImage.objects.filter(hotel=hotels)
         context = {
-            'slugs': slugs,
             'hotels': hotels,
             'images': images,
             'form': form,
         }
         return render(request, 'payment.html', context)
 
+
+def thanks_page(request):
+    return render(request, 'thanks_page.html')
